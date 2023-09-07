@@ -7,6 +7,7 @@ const showBlogForm = () => {
 
 }
 
+// create blog
 const blogFormHandler = async (event) => {
     event.preventDefault();
     document.querySelector
