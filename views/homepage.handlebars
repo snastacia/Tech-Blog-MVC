@@ -1,0 +1,15 @@
+<div class="card">
+    {{#if blogs.length}}
+    {{#each blogs as |blog|}}
+    <a href="blog/{{blog.id}}">
+        <h1 class="blog-title">{{blog.blog_title}}</h1>
+        <h3>Posted by {{blog.user.username}} on {{format_date blog.date_created}}</h3>
+    </a>
+    <p>{{blog.blog_description}}</p>
+    <hr></hr>
+    {{/each}}
+    {{else}}
+    <h1>No blogs to show</h1>
+
+    {{/if}}
+</div>

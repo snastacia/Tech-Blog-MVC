@@ -1,0 +1,46 @@
+<div class="card">
+    <h2>{{blog.blog_title}}</h2>
+    <h3>Posted by {{blog.user.username}} on {{format_date blog.date_created}}</h3>
+    <p class="blog-description">{{blog.blog_description}}</p>
+    <div class="comments-section">
+        {{#if blog.comments.length}}
+        <h3>Comments:</h3>
+        {{#each blog.comments as |comment|}}
+        <div class="comment">
+            <p><strong>Posted by {{comment.user.username }} on {{ format_date comment.date_created }}:</strong></p>
+            <p>{{ comment.comment_description }}</p>
+            <hr>
+            </hr>
+        </div>
+        {{/each}}
+        {{/if}}
+        {{#if logged_in}}
+        <form class="comment-form">
+            <label><strong>Leave Comment Here:</strong></label>
+            <textarea type="text" id="comment-description" class="input"></textarea>
+            <button type="submit" class="btn">Submit Comment</button>
+        </form>
+        <script src="/js/create-comment.js"></script>
+        {{/if}}
+        <hr></hr>
+        {{!-- if the user is authorized to edit, show the edit blog form --}}
+        {{#if can_edit}}
+        <button id="edit-btn">Edit</button>
+        <button id="delete-btn">Delete</button>
+        <form class="blog-form" style="display: none">
+            <label>Title:
+
+                <input type="text" id="blog-title" value="{{blog.blog_title}}">
+            </label>
+            <label>
+                Content:
+                <textarea type="text" id="blog-description"
+                    defaultValue="{{blog.blog_description}}">{{blog.blog_description}}</textarea>
+            </label>
+            <input type="submit">
+        </form>
+
+        <script src="/js/edit-blog.js"></script>
+        {{/if}}
+      
+    </div>

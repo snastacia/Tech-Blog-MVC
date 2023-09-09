@@ -1,6 +1,6 @@
 const User = require('./user');
 const Blog = require('./blog');
-const Comments = require('./Comments');
+const Comments = require('./comment');
 
 // Blog belongs to User
 Blog.belongsTo(User, { foreignKey: 'user_id', onDelete: 'CASCADE' });
