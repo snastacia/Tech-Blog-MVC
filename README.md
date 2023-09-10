@@ -1,6 +1,6 @@
 # Tech-Blog-MVC
 
-URL to deployed application: https://git.heroku.com/tech-blog-mvc-challenge14.git 
+URL to deployed application: https://tech-blog-mvc-challenge14-1148484299e9.herokuapp.com/ 
 
 ## Description
 
